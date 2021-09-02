@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap');
+
+:root {
+  --main-font: 'Montserrat', sans-serif;
+  --font-color: rgb(247, 238, 238);
+  --overlay-color: rgb(45, 70, 65);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: all 0.5s ease-in;
+  font-family: var(--main-font);
+  background: url('assets/software-developer-6521720_1920.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--overlay-color);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  mix-blend-mode: overlay;
+}
+
+.contact-1 a,
+.contact-2 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--font-color);
+}
+
+.navigation {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 30px;
+  color: var(--font-color);
+  font-size: 24px;
+}
+
+.navigation .main-nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation .main-nav ul li {
+  list-style-type: none;
+}
+
+.navigation .main-nav ul li a {
+  text-decoration: none;
+  color: var(--font-color);
+  padding: 15px 40px;
+  /* transition: 0.5s; */
+  cursor: pointer;
+}
+
+.navigation .main-nav ul li a:hover {
+  background-color: #fff;
+}
+
+.navigation .mobile-nav,
+.navigation .burger {
+  display: none;
+}
+
+/* main section */
+
+.grid-container {
+  padding: 150px 100px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-info-1 {
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-title {
+  margin-bottom: 30px;
+  font-size: 48px;
+  line-height: 50px;
+  color: var(--font-color);
+}
+
+.card-info-1 p,
+.card-info-2 p {
+  font-size: 20px;
+  color: var(--font-color);
+}
+
+/* footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--overlay-color);
+}
+
+footer p,
+footer .footer-info p,
+.footer-info a {
+  color: var(--font-color);
+}
+.footer-info a {
+  text-decoration: none;
+}
+
+@media (max-width: 1260px) {
+  footer {
+    position: static;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+  .navigation .burger {
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 60px;
+    z-index: 999;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    padding: 5px;
+  }
+  .navigation .burger .burger-line {
+    width: 38px;
+    height: 2px;
+    margin-bottom: 6px;
+    background-color: #fff;
+  }
+  .navigation .burger.close {
+    transform: rotate(180deg);
+  }
+  .navigation .burger.close .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+  .navigation .burger.close .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .navigation .burger.close .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+  .mobile-nav {
+    position: fixed;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #292929;
+    transform: translateX(100%);
+  }
+  .mobile-nav ul {
+    margin: 50px 20px;
+  }
+  .mobile-nav ul li {
+    list-style-type: none;
+    padding: 20px 10px;
+  }
+  .mobile-nav ul li a {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 47px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .mobile-nav ul li .active-link {
+    border-bottom: #fff 1px solid;
+  }
+  .mobile-nav.active {
+    display: block;
+    transform: translateX(0px);
+  }
+  .grid-container {
+    /* display: block; */
+    grid-template-columns: repeat(1, 1fr);
+  }
+  footer {
+    position: static;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    padding: 100px 50px;
+  }
+
+  /* footer {
+    position: static;
+  } */
+}
